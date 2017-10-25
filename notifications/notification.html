@@ -1,0 +1,6 @@
+<div class="notification-container" [@slide]="showNotification?'active':'inactive'">
+    <div class="notification-content">
+        <i class="exit-icon" (click)="hide()">X</i>
+        <ng-content></ng-content>
+    </div>
+</div>
