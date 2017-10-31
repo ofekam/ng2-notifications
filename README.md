@@ -13,7 +13,8 @@ http://plnkr.co/edit/9z0uU4VQP0cFCU7wEsyh?p=preview
 | (onHide) | $event = any[] (id array) |
 
 
-| Functions |
+| Function | Explanation |
+| ------ | ------ |
 | showNotifications() | shows all notifications |
 | showNotification(id) | show all notifications with certain id |
 | hideNotifications() | hide all notifications |
