@@ -1,10 +1,14 @@
 export class Notification {
 
-    constructor(public id: any, public description: String, public timeLimit: Number = 0, private shown: Boolean = true) {
-        if (this.shown) {
-            this.show();
+    private shown: Boolean = false;
+    constructor(public id: any, public description: String, public timeLimit: Number = 0, show: Boolean = true) {
+        if (show) {
+            setTimeout(() => {
+                this.show();
+            }, 1);
         }
     }
+
 
     show(): void {
         this.shown = true;
