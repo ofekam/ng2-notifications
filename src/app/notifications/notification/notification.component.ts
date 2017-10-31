@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Notification } from './../notification';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { trigger, style, transition, state, animate } from '@angular/animations';
 
 @Component({
-    selector: 'notification',
+    selector: 'app-notification',
     templateUrl: 'notification.html',
     styleUrls: ['notification.css'],
     animations: [
@@ -12,7 +13,8 @@ import { trigger, style, transition, state, animate } from '@angular/animations'
             }),
             ),
             state('inactive', style({
-                transform: 'translateX(350px)'
+                transform: 'translateX(350px)',
+                display: 'none'
             })),
             transition('inactive => active', animate('0.5s')),
             transition('active => inactive', animate('0.5s'))
@@ -23,23 +25,15 @@ import { trigger, style, transition, state, animate } from '@angular/animations'
 
 export class NotificationComponent implements OnInit {
 
-    showNotification: boolean = false;
+
+    @Input('src')
+    notification: Notification;
+
+    @Input()
+    closeIconClass: String;
+
 
     constructor() { }
 
     ngOnInit() { }
-
-
-    show(miliseconds: number) {
-        this.showNotification = true;
-        if (miliseconds) {
-            setTimeout(() => {
-                this.showNotification = false;
-            }, miliseconds);
-        }
-    }
-
-    hide() {
-        this.showNotification = false;
-    }
 }

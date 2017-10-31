@@ -1,0 +1,5 @@
+<ul class="notifications-wrapper">
+  <li *ngFor="let noti of notifications">
+    <app-notification [src]="noti" [closeIconClass]="closeIconClass"></app-notification>
+  </li>
+</ul>

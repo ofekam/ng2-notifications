@@ -1,0 +1,6 @@
+<div class="notification-container" [@slide]="notification.shown?'active':'inactive'">
+    <div class="notification-content">
+        <i [class]="'exit-icon ' + closeIconClass" (click)="notification.hide()" aria-hidden="true"></i>
+        {{notification.description}}
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{title}}!
+  </h1>
+</div>
+<input type="text" #desc placeholder="Description">
+<br>
+<input type="number" #time placeholder="Time limit in seconds">
+<br>
+<button (click)="addNotification(desc.value,time.value)">+</button>
+<app-notification-manager [notifications]="notifications" [closeIconClass]="'fa fa-times-circle'"></app-notification-manager>
